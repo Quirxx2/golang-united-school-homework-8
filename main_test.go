@@ -1,4 +1,4 @@
-package iosx
+package main
 
 import (
 	"bytes"
