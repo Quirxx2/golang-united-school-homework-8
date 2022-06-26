@@ -1,4 +1,4 @@
-package main
+package iosx
 
 import (
 	"encoding/json"
@@ -179,12 +179,12 @@ func Perform(args Arguments, writer io.Writer) error {
 }
 
 func parseArgs() Arguments {
-	operation := flag.String("operation", "", "requested action")
-	item := flag.String("item", "", "user data")
-	fileName := flag.String("fileName", "", "output file name")
 	id := flag.String("id", "", "user id")
+	item := flag.String("item", "", "user data")
+	operation := flag.String("operation", "", "requested action")
+	fileName := flag.String("fileName", "", "output file name")
 	flag.Parse()
-	return Arguments{"operation": *operation, "item": *item, "fileName": *fileName, "id": *id}
+	return Arguments{"id": *id, "item": *item, "operation": *operation, "fileName": *fileName}
 }
 
 func main() {
